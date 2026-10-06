@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% set heading="Analytics" %}{% block content %}
+<section class="page-intro"><span class="badge">PERFORMANCE INTELLIGENCE</span><h2>Health distribution</h2><p>A decision view for prioritizing engineering attention.</p></section>
+<section class="panel"><div class="analytics-summary"><div><span>Average Health</span><strong>{{avg_health}}%</strong></div><div><span>Best Asset</span><strong>{{assets|sort(attribute='health',reverse=true)|first|attr('name')}}</strong></div><div><span>Lowest Health</span><strong>{{assets|sort(attribute='health')|first|attr('name')}}</strong></div></div>
+<div class="bars">{% for a in assets %}<div class="bar-row"><span>{{a.name}}</span><div><i style="width:{{a.health}}%"></i></div><strong>{{a.health}}%</strong></div>{% endfor %}</div></section>{% endblock %}

@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% set heading="Settings" %}{% block content %}
+<section class="page-intro"><span class="badge">SYSTEM CONFIGURATION</span><h2>Command center settings</h2><p>Configuration area for future enterprise deployment controls.</p></section>
+<form class="panel settings-form"><label>Environment<input value="Demo / Development" readonly></label><label>Refresh interval<input value="10 seconds" readonly></label><label>Data source<input value="Local telemetry + synthetic asset data" readonly></label><button class="btn primary">Save Configuration</button></form>
+{% endblock %}

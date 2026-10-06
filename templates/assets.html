@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% set heading="Asset Health" %}{% block content %}
+<section class="page-intro"><span class="badge">ASSET INTELLIGENCE</span><h2>Monitored asset register</h2><p>Prioritize maintenance using health, criticality and latest event context.</p></section>
+<section class="panel"><div class="table-wrap"><table><thead><tr><th>Asset</th><th>Type</th><th>Location</th><th>Health</th><th>Criticality</th><th>Status</th><th>Last Event</th></tr></thead><tbody>
+{% for a in assets %}<tr><td><strong>{{a.name}}</strong></td><td>{{a.asset_type}}</td><td>{{a.location}}</td><td><strong>{{a.health}}%</strong></td><td>{{a.criticality}}</td><td><span class="status {{a.status|lower}}">{{a.status}}</span></td><td>{{a.last_event}}</td></tr>{% endfor %}
+</tbody></table></div></section>{% endblock %}

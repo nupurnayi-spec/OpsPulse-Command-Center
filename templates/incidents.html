@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% set heading="Incident Command" %}{% block content %}
+<section class="page-intro"><span class="badge">EVENT MANAGEMENT</span><h2>Operational incident queue</h2><p>Track, investigate and close events requiring engineering attention.</p></section>
+<section class="panel">{% for i in incidents %}<div class="incident incident-large"><span class="sev {{i.severity|lower}}"></span><div><strong>{{i.title}}</strong><span>{{i.asset}} • {{i.created_at}}</span></div><em>{{i.status}}</em>{% if i.status!="Closed" %}<form method="post" action="/incidents/{{i.id}}/close"><button class="btn">Close incident</button></form>{% endif %}</div>{% endfor %}</section>
+{% endblock %}
